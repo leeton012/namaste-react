@@ -1,6 +1,7 @@
 import RestaurantCard from './RestaurantCard';
 import { useEffect, useState } from 'react';
 import Shimmer from './ShimmerUI';
+import { Link } from 'react-router-dom';
 // import resList from '../utils/mockData'; --> // mockData.js file rendered for sample
 
 // not using keys is the bad practices
@@ -18,7 +19,9 @@ const Body = () => {
   //whenever state variable update, react triggers the reconciliation cycle(rerender the component)
   console.log('🚀 ~ file: Body.js:15 ~ Body ~ searchText:', searchText);
 
+  // useEffect for calling Api
   useEffect(() => {
+    console.log('useEffect called from body');
     fetchData();
   }, []);
 
@@ -87,7 +90,9 @@ const Body = () => {
       </div>
       <div className='res-container'>
         {searchFilteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link key={restaurant.info.id} to={`/restaurants/${restaurant.info.id}`}>
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
