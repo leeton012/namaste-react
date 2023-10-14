@@ -5,8 +5,8 @@ import { MENU_API } from '../utils/constant';
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState([]);
+  //for taking the res id from browser url
   const { resId } = useParams();
-  console.log(resId);
 
   useEffect(() => {
     fetchRestaurants();
@@ -25,6 +25,7 @@ const RestaurantMenu = () => {
     }
   };
 
+  // for loading shimmer ui first untill rendering is done
   if (!resInfo.length) return <Shimmer />;
 
   //destructure the data from api
@@ -34,7 +35,7 @@ const RestaurantMenu = () => {
   const { itemCards } = resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
   const { cards } = resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR;
 
-  console.log('cards -->  ', cards);
+  console.log('cards -->  ', cards[2].card.card.itemCards);
 
   return (
     <div>
@@ -43,18 +44,28 @@ const RestaurantMenu = () => {
         {cuisines.join(', ')} - {costForTwoMessage}
       </h3>
       <h3>Menu</h3>
-      <ul>
-        {}
-        {itemCards.map((item) => (
-          <li key={item.card.info.id}>
-            {item.card.info.name} ----- {' Rs '}{' '}
-            {item.card.info.price / 100 || item.card.info.defaultPrice / 100}{' '}
-          </li>
-        ))}
-        {/* <li>{}</li>
-        <li>Burger</li>
-        <li>Diet Coke</li> */}
-      </ul>
+      {itemCards.map((item) => (
+        <li key={item.card.info.id}>
+          {item.card.info.name} ----- {' Rs '}{' '}
+          {item.card.info.price / 100 || item.card.info.defaultPrice / 100}{' '}
+        </li>
+      ))}
+
+      {/* {cards.map((item) => (
+        <>
+          <h3>
+            {item.card.card.title || item.card.card.type || item.card.card.name}
+            <ul>
+              {item.card.card.itemCards.map((el) => (
+                <li key={el.card.info.id}>
+                  {el.card.info.name} ----- {' Rs '}{' '}
+                  {el.card.info.price / 100 || el.card.info.defaultPrice / 100}{' '}
+                </li>
+              ))}
+            </ul>
+          </h3>
+        </>
+      ))} */}
     </div>
   );
 };

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 .logo{
@@ -82,4 +83,22 @@
 
 .filter{
     display: flex;
+}
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.func-comp{
+    text-align: center;
+}
+
+.cls-comp{
+    text-align: center;
+}
+
+.user{
+    text-align: center;
 }
