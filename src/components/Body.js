@@ -2,6 +2,7 @@ import RestaurantCard from './RestaurantCard';
 import { useEffect, useState } from 'react';
 import Shimmer from './ShimmerUI';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../utils/useOnlineStatus';
 // import resList from '../utils/mockData'; --> // mockData.js file rendered for sample
 
 // not using keys is the bad practices
@@ -44,6 +45,9 @@ const Body = () => {
       console.log(err);
     }
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) return <h1>Looks like you are offline...... Please Check!!</h1>;
 
   // show loading untill api returns data and render the whole
   // conditional rendering

@@ -1,32 +1,34 @@
 import { useState, useEffect } from 'react';
 import Shimmer from './ShimmerUI';
 import { useParams } from 'react-router-dom';
-import { MENU_API } from '../utils/constant';
+import useRestaurantMenu from '../utils/useRestaurantMenu';
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState([]);
+  // const [resInfo, setResInfo] = useState([]);
   //for taking the res id from browser url
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchRestaurants();
-  }, []);
+  // useEffect(() => {
+  //   fetchRestaurants();
+  // }, []);
 
-  const fetchRestaurants = async () => {
-    try {
-      console.log('upto here');
-      const response = await fetch(MENU_API + resId);
+  // const fetchRestaurants = async () => {
+  //   try {
+  //     console.log('upto here');
+  //     const response = await fetch(MENU_API + resId);
 
-      const json = await response.json();
-      console.log(json);
-      setResInfo(json.data.cards);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  //     const json = await response.json();
+  //     console.log(json);
+  //     setResInfo(json.data.cards);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+
+  const resInfo = useRestaurantMenu(resId);
 
   // for loading shimmer ui first untill rendering is done
-  if (!resInfo.length) return <Shimmer />;
+  if (resInfo === null) return <Shimmer />;
 
   //destructure the data from api
   const { name, cuisines, costForTwoMessage } = resInfo[0]?.card?.card?.info;

@@ -11,7 +11,7 @@
     "abortcontroller-polyfill": "^1.7.5",
     "ansi-styles": "^4.3.0",
     "argparse": "^2.0.1",
-    "axios": "^1.5.1",
+    "axios": "^1.6.0",
     "base-x": "^3.0.9",
     "boolbase": "^1.0.0",
     "braces": "^3.0.2",
