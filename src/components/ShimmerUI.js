@@ -1,25 +1,25 @@
 const Shimmer = () => {
   return (
-    <div className='shimmer-container'>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
-      <div className='shimmer-box'></div>
+    <div className='flex flex-wrap justify-center'>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
+      <div className='w-[200px] m-3 rounded-lg h-[300px] bg-gray-100'></div>
     </div>
   );
 };

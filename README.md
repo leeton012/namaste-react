@@ -35,6 +35,7 @@ jsx // </h1> // );
 
 // const HeadingComponent = () => ( // <div id='container'> // {/_ call react functional component
 _/} // <JSXHeading /> // {/_ call react Element _/} // {jsxHeading} //
+
 <h1 className='heading'>Namaste React from Functional Compoenent</h1> // </div> // );
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -101,3 +102,55 @@ _/} // <JSXHeading /> // {/_ call react Element _/} // {jsxHeading} //
 
 - client side Routing --> basicalli we do client siode routing for the single page application.
 - Server side Routing
+
+# css file file before start into telwindcss
+
+- .header{
+- display: flex;
+- justify-content: space-between;
+- border: 1px solid black;
+- border-radius: 10px;
+- }
+
+- .logo{
+-     width: 120px;
+- }
+
+- .nav-items{
+-     padding: 0px 10 px;
+- }
+
+.nav-items > ul{ font-size: 24px; display: flex; list-style-type: none; }
+
+.nav-items > ul > li { padding: 10px; margin: 10px; }
+
+.res-container{ display: flex; flex-wrap: wrap; justify-content: center; }
+
+.res-card{ padding: 5px; width: 200px; margin: 8px; border-radius: 10px; }
+
+.res-card:hover{ border: 1px solid black; cursor: pointer; }
+
+.search{ padding: 10px; }
+
+.res-logo{ width: 200px; height:120px; border-radius: 10px; }
+
+.filter-btn{ margin: 10px; cursor: pointer; }
+
+.shimmer-container{ display: flex; flex-wrap: wrap; justify-content: center; }
+
+.shimmer-box{ width: 200px; margin: 10px; border-radius: 10px; height: 300px; background-color:
+#f0f0f0; }
+
+.login{ padding: 0 20px; cursor: pointer; }
+
+.search{ display: flex; padding: 10px; }
+
+.filter{ display: flex; }
+
+.user-card{ padding: 10px; border: 1px solid black; border-radius: 10px; }
+
+.func-comp{ text-align: center; }
+
+.cls-comp{ text-align: center; }
+
+.user{ text-align: center; }
