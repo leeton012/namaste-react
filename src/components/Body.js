@@ -1,9 +1,10 @@
 import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Shimmer from './ShimmerUI';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import { RESTAURANT_API } from '../utils/constant';
+import UserContext from '../utils/UserContext';
 // import resList from '../utils/mockData'; --> // mockData.js file rendered for sample
 
 // not using keys is the bad practices
@@ -57,6 +58,8 @@ const Body = () => {
   //   return <Shimmer />;
   // }
 
+  const { loggedInUser, setUserName } = useContext(UserContext);
+
   return !listOfRestaurant.length ? (
     <Shimmer />
   ) : (
@@ -94,6 +97,14 @@ const Body = () => {
             }}>
             Top Rated Restaurants
           </button>
+        </div>
+        <div className='search p-4 m-4 flex items-center'>
+          <label> UserName : </label>
+          <input
+            className='border border-black p-4r m-4'
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
       <div className='flex flex-wrap justify-center'>

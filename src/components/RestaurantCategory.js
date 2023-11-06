@@ -1,17 +1,24 @@
+// import React, { useState } from 'react';
 import ItemList from '../components/ItemList';
+import { useState } from 'react';
 
-const RestaurantCategory = ({ data }) => {
+const RestaurantCategory = ({ data, showItems, setShowItemIndex }) => {
+  const handleClick = (e) => {
+    setShowItemIndex(e.target.value);
+  };
+
+  console.log('🚀 ~ file: RestaurantCategory.js:20 ~ RestaurantCategory ~ showItems:', showItems);
   return (
     <div>
       {/** Header  */}
       <div className='w-6/12 bg-gray-100 shadow-lg p-4 mx-auto my-2  '>
-        <div className='justify-between flex cursor-pointer'>
+        <div className='justify-between flex cursor-pointer' onClick={handleClick}>
           <span className='font-bold text-lg'>
             {data.title} ({data.itemCards.length})
           </span>
           <span>⬇️</span>
         </div>
-        <ItemList items={data.itemCards} />
+        {showItems && <ItemList items={data.itemCards} />}
       </div>
     </div>
   );

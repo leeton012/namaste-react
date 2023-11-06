@@ -9,22 +9,8 @@ const RestaurantMenu = () => {
   //for taking the res id from browser url
   const { resId } = useParams();
 
-  // useEffect(() => {
-  //   fetchRestaurants();
-  // }, []);
-
-  // const fetchRestaurants = async () => {
-  //   try {
-  //     console.log('upto here');
-  //     const response = await fetch(MENU_API + resId);
-
-  //     const json = await response.json();
-  //     console.log(json);
-  //     setResInfo(json.data.cards);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
+  //for colapse all the othert accordian once tap n one accordian
+  const [showIndex, setShowIndex] = useState(null);
 
   const resInfo = useRestaurantMenu(resId);
 
@@ -44,6 +30,7 @@ const RestaurantMenu = () => {
     (el) =>
       el.card?.card?.['@type'] === 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
   );
+  categories.isCollapsed = true;
 
   return (
     <div className='text-center'>
@@ -51,8 +38,12 @@ const RestaurantMenu = () => {
       <p className='font-bold text-lg'>
         {cuisines.join(', ')} - {costForTwoMessage}
       </p>
-      {categories.map((el) => (
-        <RestaurantCategory data={el?.card?.card} />
+      {categories.map((el, index) => (
+        <RestaurantCategory
+          data={el?.card?.card}
+          showItems={index === showIndex ? true : false}
+          setShowItemIndex={() => setShowIndex(index)}
+        />
       ))}
     </div>
   );

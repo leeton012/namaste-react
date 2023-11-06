@@ -2,7 +2,6 @@
 
 const ItemList = ({ items }) => {
   try {
-    console.log('🚀 ~ file: ItemList.js:2 ~ ItemList ~ item:', items);
     return (
       <div>
         {items.map((el) => (
@@ -12,10 +11,9 @@ const ItemList = ({ items }) => {
             <div className='w-10/12'>
               <div className='py-2'>
                 <span>{el.card.info.name}</span>
-                <span>
-                  - ₹
-                  {el.card.info.price ? el.card.info.price / 100 : el.card.info.defaultPrice / 100}
-                </span>
+                <p>
+                  ₹{el.card.info.price ? el.card.info.price / 100 : el.card.info.defaultPrice / 100}
+                </p>
               </div>
               <p className='text-xs'>{el.card.info.description}</p>
             </div>
@@ -28,6 +26,7 @@ const ItemList = ({ items }) => {
                   'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/' +
                   el.card.info.imageId
                 }
+                className='w-full'
               />
             </div>
           </div>

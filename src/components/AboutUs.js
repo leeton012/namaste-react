@@ -1,6 +1,7 @@
 import User from './User';
 import UserClass from './UserClass';
 import { Component } from 'react';
+import UserContext from '../utils/UserContext';
 
 class AboutUs extends Component {
   constructor(props) {
@@ -23,6 +24,13 @@ class AboutUs extends Component {
         <User name={'Prince - Functional comp'} />
         <h4 className='cls-comp'>Class Based Component</h4>
         <UserClass name={'Prince - Class Comp'} />
+        {/**classbased component is not havinghook so we have to pass this way */}
+        <div>
+          LoggedIn user:{' '}
+          <UserContext.Consumer>
+            {({ loggedInUser }) => <h4 className='text-xl font-bold'>{loggedInUser}</h4>}
+          </UserContext.Consumer>
+        </div>
       </div>
     );
   }
