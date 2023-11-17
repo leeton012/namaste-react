@@ -154,3 +154,32 @@ _/} // <JSXHeading /> // {/_ call react Element _/} // {jsxHeading} //
 .cls-comp{ text-align: center; }
 
 .user{ text-align: center; }
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux
+- Build Our own store
+- Connect our store to our app
+- Create a cart slice
+- Dispatch an action
+- Selector
+
+# Types of Testing(Developers)
+
+- Unit Testing
+- Integration Testing
+- End to End Testing --> e2e Testing
+
+# Setting up testing in our app
+
+- Install React Testing Library
+- Install jest
+- Install Babel Dependencies
+- Configure Babel
+- Configure Parcel config file to disable default babel Transpilation
+- Jest Configuration
+- JEST initialize --> npx jest --init
+- install jsDom Library
+- install @babel/preset-react - to make jsx work in test case
+- include @babel/preset-react inside my babel config
+- install @testing-library/jest-dom

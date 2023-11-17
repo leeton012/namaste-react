@@ -1,12 +1,21 @@
 // import { CDN_URL } from '../utils/constant';
 
+import { addItem } from '../utils/cartSlice';
+import { useDispatch } from 'react-redux';
+
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (items) => {
+    //dispatch an action here ......................
+    dispatch(addItem(items));
+  };
   try {
     return (
       <div>
         {items.map((el) => (
           <div
             key={el.card.info.id}
+            data-testid='foodItems'
             className='p-2 m-2 border-gray-300 border-b-2 text-left flex justify-between'>
             <div className='w-10/12'>
               <div className='py-2'>
@@ -19,7 +28,11 @@ const ItemList = ({ items }) => {
             </div>
             <div className='w-2/12'>
               <div className='absolute'>
-                <button className='p-1 mx-20 bg-white shadow-lg m-auto rounded-lg'>Add +</button>
+                <button
+                  className='p-1 mx-20 bg-white shadow-lg m-auto rounded-lg'
+                  onClick={() => handleAddItem(el)}>
+                  Add +
+                </button>
               </div>
               <img
                 src={

@@ -3,12 +3,16 @@ import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState('Login');
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
-  console.log('🚀 ~ file: Header.js:11 ~ Header ~ loggedInUser:', loggedInUser);
+
+  //Subscribing the store using selector to update into the header in cart
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log('🚀 ~ file: Header.js:15 ~ Header ~ cartItems:', cartItems);
 
   //if no dependancy array ==> then useEffect render everytym the component render
   // if dependency array is empty == [] ==> useEffect call in initial render of the component
@@ -34,8 +38,8 @@ const Header = () => {
           <li className='px-4'>
             <Link to='/contact'>Contact us</Link>
           </li>
-          <li className='px-4'>
-            <Link>Cart</Link>
+          <li className='px-4 font-bold text-xl'>
+            <Link to='/cart '>Cart({cartItems.length})</Link>
           </li>
           <button
             className='login'

@@ -23,7 +23,6 @@ const Body = () => {
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   //whenever state variable update, react triggers the reconciliation cycle(rerender the component)
-  console.log('🚀 ~ file: Body.js:15 ~ Body ~ searchText:', searchText);
 
   // useEffect for calling Api
   useEffect(() => {
@@ -68,6 +67,7 @@ const Body = () => {
         <div className='search p-4 m-4'>
           <input
             type='text'
+            data-testid='searchInput'
             className='border border-solid border-black rounded-sm'
             value={searchText}
             onChange={(e) => {
@@ -92,8 +92,8 @@ const Body = () => {
           <button
             className='px-2 py-0.5 bg-gray-100 m-4 rounded-sm'
             onClick={() => {
-              const filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4.3);
-              setListOfRestaurant(filteredList);
+              const filteredList = listOfRestaurant.filter((res) => res.info.avgRating > 4.4);
+              setSearchFilteredRestaurant(filteredList);
             }}>
             Top Rated Restaurants
           </button>

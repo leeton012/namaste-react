@@ -24,8 +24,6 @@ const RestaurantMenu = () => {
   const { itemCards } = resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
   const { cards } = resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR;
 
-  console.log('cards -->  ', resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-
   const categories = resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
     (el) =>
       el.card?.card?.['@type'] === 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
@@ -40,6 +38,7 @@ const RestaurantMenu = () => {
       </p>
       {categories.map((el, index) => (
         <RestaurantCategory
+          key={index}
           data={el?.card?.card}
           showItems={index === showIndex ? true : false}
           setShowItemIndex={() => setShowIndex(index)}

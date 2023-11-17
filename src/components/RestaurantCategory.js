@@ -7,7 +7,6 @@ const RestaurantCategory = ({ data, showItems, setShowItemIndex }) => {
     setShowItemIndex(e.target.value);
   };
 
-  console.log('🚀 ~ file: RestaurantCategory.js:20 ~ RestaurantCategory ~ showItems:', showItems);
   return (
     <div>
       {/** Header  */}
